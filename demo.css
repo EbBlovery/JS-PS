@@ -1,0 +1,55 @@
+*{padding:0px;margin:0px;border:none;font-size:12px}
+body{padding:0px;margin:0px;}
+#header{width:100%;height:40px;background:rgb(51,51,51);position:relative;}
+#header .header_left{ width:700px;height:40px;margin-left:40px;float:left;}
+#header .header_left ul li{list-style:none; float:left;margin:0 10px;line-height:40px;text-align:center;}
+#header .header_left ul li a{color:rgb(176,176,176);text-decoration:none;}
+#header .header_mid{float:left;margin-left:200px;width:200px;padding:9px;}
+#header .header_mid span{margin:0 10px;}
+#header .header_mid span a{color:rgb(176,176,176);margin-top:5px;}
+#header .header_left ul li a:hover,#header .header_mid span a:hover{color:#fff;}/*鼠标伪类*/
+
+#header .header_right{width:100px;float:left;height:40px;line-height:40px;}/*购物车样式*/
+
+#header .header_right a{text-decoration:none;color:rgb(176,176,176);}
+#header .header_right .header_right_buy{width:300px;height:100px;box-shadow:-2px 2px 2px rgb(238,238,238);position:absolute;top:40px;left:70%;display:none;}
+
+#main{width:1226px;margin:0 auto;height:1000px;}
+
+#main .nav{width:100%;height:100px;}/*导航开始*/
+#main .nav .nav_left{width:234px;height:100px;float:left;}
+#main .nav .nav_left img{margin:25px 0px;}
+#main .nav .nav_mid{width:660px;height:100px;float:left;}
+#main .nav .nav_mid ul li{float:left;margin:0 10px;list-style:none;height:100px;line-height:100px;}
+#main .nav .nav_mid ul li a{color:rgb(51,51,51);font-size:16px;text-decoration:none;}
+
+
+#main .nav .nav_right .search{width:300px;height:52px;background-image:url(images/search.png) no-repeat; margin:20px 8px;font-size:30px;border:1px solid #999;}
+
+#showpic{width:1226;height:460px;position:relative;}
+#showpic .showpic_left{width:235px;opacity:1;height:460px;position:absolute;top:0px;left:0px;padding-top:20px;background-color:}
+#showpic .showpic_left ul li{width:100%;height:42px;list-style:none;line-height:42px;text-indent:15px;}
+#showpic .showpic_left ul li a{color:rgb(255,255,255);font-size:16px;text-decoration:none;}
+#showpic .showpic_left ul li:hover{background:rgb(255,103,0);opacity:1;}
+
+#showpic .showpic_right ul li{list-style:none;float:left;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

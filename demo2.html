@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	    *{padding:0px;margin:0px;}
+	     li{list-style:none;}
+       a{text-decoration:none;}
+		    #mainBody{height:100px;width:100%;}
+		    #mainBody .main_nav{width:1226px;margin:0px auto;position:relative;}
+        #mainBody .main_nav img{margin:20px 0px;cursor:pointer;}
+        #mainBody .main_nav>ul{position:absolute;top:0px;left:236px;}
+        #mainBody .main_nav>ul>li{list-style:none;float:left;height:100px;line-height:100px;}
+        #mainBody .main_nav>ul>li>a{color:black;text-decoration:none;margin:0 10px;}
+        #mainBody .main_nav>ul>li>a:hover{color:red;}
+        #mainBody .main_nav .user{width:300px;height:52px;float:right;}
+        #mainBody .main_nav .user .user_text{height:50px;width:200px;position:absolute;top:20px;right:50px;}
+        #mainBody .main_nav .user .user_submit{width:50px;height:50px;margin:0px;background-image:url(images/search.png);border:1px solid red;position:absolute;top:20px;right:0px;}
+        #mainBody .main_nav .user .user_submit:hover{background:rgb(255,103,0);}
+        #mainBody .main_nav .nav{width:1226px;height:230px;border-top:1px solid #999;position:absolute;top:100px;left:-230px;display:none;box-shadow:0 2px 1px #999;z-index:100;background:#fff; }
+        #mainBody .main_nav li:hover .nav{display:block;}
+        #mainBody .main_nav .nav li{list-style:none;float:left;width:203px;position: relative;}
+        #mainBody .main_nav .nav li img{width:89px;height:111px;padding:10px 40px;}
+        #mainBody .main_nav .nav li span{width:100px;height:50px; position:absolute;left:70px;bottom:40px;}
+        #mainBody .main_nav .nav li h6{width:50px;height:50px;position:absolute;left:70px;bottom:20px;color: red;}
+        #showPic{width:1226px;height:480px;margin:0px auto;position: relative;}
+        #showPic>ul>li{position: absolute;top: 0px;left:0px;}
+        #showPic .btn{position:absolute;bottom:60px;left:500px;width:150px;height:25px;background:#fff;border-radius:25px;}
+        #showPic .btn ul{margin:5px 13px;z-index:2;position:relative;}
+        #showPic .btn ul li{margin:0px 2px;border:1px solid red;width:14px;height:14px;float:left;border-radius:14px;}
+        .col{background:red;width:16px;border:none;}
+        .btnall .btnall_1{z-index:10;position: absolute;left:200px;top:200px;cursor:pointer;}
+        .btnall .btnall_2{z-index:10;position: absolute;right:0px;top:200px;cursor:pointer;}
+        /*左侧nav栏目*/
+        #showPic .left_nav{width:200px;height:450px;position:absolute;top:0px;left:0px;z-index:30;padding:5px 0px;background:rgb(92,82,82);opacity:0.8;}
+        #showPic .left_nav ul li{height:45px;line-height:45px;text-indent:10px;}
+        #showPic .left_nav ul li:hover{background:rgb(255,103,0);border-left:4px solid #e4343c;width:196px;}
+        #showPic .left_nav ul li>a{color:#fff;}
+        #showPic .left_nav .left_nav_sml{width:500px;height:460px;position:absolute;top:0px;left:200px;border:1px solid red; z-index:100;background:#fff;display:none;}
+        #showPic .left_nav ul li:hover .left_nav_sml{display:block;}
+        #showPic .left_nav .left_nav_sml dl dd{height:40px;width:200px;position:relative;padding:10px 10px;margin:10px 30px;position: absolute;top:10px;left:10px;}
+        #showPic .left_nav .left_nav_sml dl dd img{width:30px;height:40px;display:block;float:left;}
+        #showPic .left_nav .left_nav_sml dl dd h6{display:block;float:left;margin:0px 20px;}
+        #showPic .left_nav .left_nav_sml dl dd span{display:block;float:right;border:1px solid red;text-align: center;}
+        #showPic .left_nav .left_nav_sml dl dd span a{color:black;};
+        #showPic .left_nav .left_nav_sml dl span:hover{background:red;color:red;}
+
+
+        .list{width:1226px;height:200px;margin:0px auto;}
+        .list .list_left{width:235px;height:170px;float:left;background:rgb(95,87,80); cursor:pointer;}
+        .list .list_right{float:right;margin:0px 0px 0px 12px;cursor:pointer;}
+        .list .list_left ul li{display:inline-block;width:50px;height:50px;margin:17px 11px;}
+
+
+        #showNew{width:1226px;height:460px;margin:0px auto;position: relative;overflow:hidden;}
+        #showNew ul{width:2552px;position: absolute;left:-1300px;}
+        #showNew ul li{width:210px;height:380px;float:left;margin:10px 20px;border-top:2px solid red;position:relative;}
+        #showNew ul li img{display: block; margin:10px auto;}
+        #showNew ul li span a{position:absolute;top:200px;left:80px;color:black;font-size:10px;}
+        #showNew ul li p{display:block; margin:40px 70px;}
+        #showNew ul li p:hover{color:red;}
+        #showNew .btn{position: absolute;top:10px;right:10px;}
+        #showNew .btn input{width:37px;height:25px;}
+        
+	</style>	
+</head>
+<body>
+  <div id="mainBody">
+	   <div class="main_nav">
+	        <img src="images/logo.png">
+		   	<ul>
+		  		<li><a href="#">小米手机</a>
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/a1.png"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/a2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/a3.jpg"><span>fd</span><h6>34</h6></li>
+                    		<li><img src="images/a4.jpg"><span>zf</span><h6>5</h6></li>
+                    		<li><img src="images/a5.jpg"><span>wer</span><h6>64</h6></li>
+                    		<li><img src="images/a5.jpg"><span>sdf</span><h6>56</h6></li>
+                    	</ul>
+                    </div>
+
+		  		</li>
+		  		<li><a href="#">红米</a>
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/b1.jpg"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/b2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/b3.jpg"><span>fd</span><h6>34</h6></li>
+                    		<li><img src="images/b4.jpg"><span>zf</span><h6>5</h6></li>                   		
+                    	</ul>
+                    </div>
+		  		</li>
+		  		<li><a href="#">平板·笔记本</a>
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/a1.png"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/a2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/a3.jpg"><span>fd</span><h6>34</h6></li>
+                    		
+                    	</ul>
+                    </div>
+		  		</li>
+		  		<li><a href="#">电视</a>
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/a1.png"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/a2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/a3.jpg"><span>fd</span><h6>34</h6></li>
+                    		
+                    	</ul>
+                    </div>
+		  		</li>
+		  		<li><a href="#">盒子·影音</a>
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/b1.jpg"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/b2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/b3.jpg"><span>fd</span><h6>34</h6></li>
+                    		
+                    	</ul>
+                    </div>
+		  		</li>
+		  		<li><a href="#">路由器</a>
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/a1.png"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/a2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/a3.jpg"><span>fd</span><h6>34</h6></li>
+                    		
+                    	</ul>
+                    </div>
+		  		</li>
+		  		<li><a href="#">智能硬件</a>
+
+                    <div class="nav">
+                    	<ul>
+                    		<li><img src="images/b1.jpg"><span>ad</span><h6>345</h6></li>
+                    		<li><img src="images/b2.jpg"><span>dfgs</span><h6>54</h6></li>
+                    		<li><img src="images/b3.jpg"><span>fd</span><h6>34</h6></li>
+                    		
+                    	</ul>
+                    </div>
+		  		</li>
+		  		<li><a href="#">服务</a></li>
+		  		<li><a href="#">社区</a></li>
+		  	</ul>
+		  	<div class="user">
+		  		<form method="post" >
+		  			<input class="user_text" type="text" name="username" />
+		  			<input class="user_submit" type="button" name="" />
+		  		</form>
+		  	</div>
+	   </div>  	
+  </div>
+  <div id="showPic">
+      <div class="left_nav">
+          <ul>
+              <li><a href="">手机 电话卡</a>
+                <div class="left_nav_sml">
+                    <dl>                        
+                        <dd><img src="images/nav/5c_80.png"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/compare.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4-80.jpg"><h6>小米5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4A-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmnote4-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/mimobile.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/MIX-80.jpg"><h6>小米手机c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5S-plus-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xmNOTE2-80.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小米c</h6><span><a href="#">选购</a></span></dd>
+                    </dl>
+                </div>
+                 
+              </li>
+              <li><a href="">笔记本 平板</a>
+                <div class="left_nav_sml">
+                    <dl>                        
+                        <dd><img src="images/nav/5c_80.png"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/compare.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4-80.jpg"><h6>小米5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4A-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmnote4-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/mimobile.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/MIX-80.jpg"><h6>小米手机c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5S-plus-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xmNOTE2-80.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小米c</h6><span><a href="#">选购</a></span></dd>
+                    </dl>
+                </div>
+              </li>
+              <li><a href="">电视 盒子</a>
+                <div class="left_nav_sml">
+                    <dl>                        
+                        <dd><img src="images/nav/5c_80.png"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/compare.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4-80.jpg"><h6>小米5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4A-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmnote4-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/mimobile.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/MIX-80.jpg"><h6>小米手机c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5S-plus-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xmNOTE2-80.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小米c</h6><span><a href="#">选购</a></span></dd>
+                    </dl>
+                </div>
+              </li>
+              <li><a href="">路由器 智能硬件</a></li>
+              <li><a href="">移动电源 电池 插线板</a></li>
+              <li><a href="">耳机 音箱</a></li>
+              <li><a href="">保护套 贴膜</a>
+                <div class="left_nav_sml">
+                    <dl>                        
+                        <dd><img src="images/nav/5c_80.png"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/compare.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4-80.jpg"><h6>小米5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hm4A-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmnote4-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/mimobile.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/MIX-80.jpg"><h6>小米手机c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5S-plus-80.jpg"><h6>小米手机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xmNOTE2-80.jpg"><h6>小米机5c</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/xm5-80.jpg"><h6>小米手机5</h6><span><a href="#">选购</a></span></dd>
+                        <dd><img src="images/nav/hmn4x80.png"><h6>小米c</h6><span><a href="#">选购</a></span></dd>
+                    </dl>
+                </div>
+              </li>
+              <li><a href="">线材 支架 存储卡</a></li>
+              <li><a href="">箱包 服饰 鞋</a></li>
+              <li><a href="">米兔 生活周边</a></li>
+          </ul>
+      </div>
+      <div class="btnall">
+      	<img class="btnall_1" src="images/btn_left.png">
+      	<img class="btnall_2" src="images/btn_right.png">
+      </div>
+
+  	  <ul class="one">
+  	  	<li><img src="images/shou5.jpg"></li>
+  	  	<li><img src="images/shou4.jpg"></li>
+  	  	<li><img src="images/shou3.jpg"></li>
+  	  	<li><img src="images/shou2.jpg"></li>
+  	  	<li><img src="images/shou1.jpg"></li>
+  	  </ul> 
+  	  <div class="btn">
+  	  	  <ul>
+  	  	  	  <li class="col"></li>
+  	  	  	  <li></li>
+  	  	  	  <li></li>
+  	  	  	  <li></li>
+              <li></li>	  	  	 
+  	  	  </ul>
+  	  </div>   
+  </div>
+  <div class="list">
+       <div class="list_left">
+          <ul>
+              <li><a href=""><img src="images/list_one.png"></a></li>
+              <li><a href=""><img src="images/list_one.png"></a></li>
+              <li><a href=""><img src="images/list_one.png"></a></li>
+              <li><a href=""><img src="images/list_one.png"></a></li>
+              <li><a href=""><img src="images/list_one.png"></a></li>
+              <li><a href=""><img src="images/list_one.png"></a></li>
+          </ul>
+       </div>
+       <div class="list_right">
+          <a href=""><img src="images/nav/list1.jpg" width="317px" height="170px" /></a>
+       </div>
+       <div class="list_right">
+          <a href=""><img src="images/nav/list2.jpg" width="317px" height="170px" /></a>
+       </div>
+       <div class="list_right">
+          <a href=""><img src="images/nav/list3.jpg" width="317px" height="170px" /></a>
+       </div>
+
+  </div>
+  <div id="showNew">
+        <h3>小米明星单品</h3><div class="btn"><input type="button" onclick="startMove()" name="" style="background-image:url(images/list/btn1.png) no-repeat;"><input type="button" name="" onclick="startMove1()"></div>
+        <div>
+          <ul id="main">
+              <li><img src="images/list/list1.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list2.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list3.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list4.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list5.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list6.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list7.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list8.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list9.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+              <li><img src="images/list/list10.png" width="170px" height="170px"><span><a href="">小米手环</a></span><p>dfwerwere</p><p>123元</p></li>
+          </ul>
+        </div>
+  </div>
+ <script type="text/javascript" src="jquery/jquery-3.1.1.min.js"></script>
+ <script type="text/javascript">
+   function b(){
+   var i=0;
+   function a(){
+          
+          $("#showPic .btn ul li").click(function () {
+                      
+             i=$(this).index();
+             $(this).addClass("col").siblings().removeClass("col");
+             $("#showPic .one li").eq(i).fadeIn(300).siblings().fadeOut(300);            
+                    })
+      }
+      a();
+      $("#showPic .btnall .btnall_1").click(function(){
+         i=i-1;
+         if(i<0)i=4;
+         if(i==-1){            
+                $("#showPic .one li").eq(4).fadeIn(300).siblings().fadeOut(300);
+                $("#showPic .btn li").eq(4).addClass("col").siblings().removeClass("col");
+
+         }else{
+              $("#showPic .one li").eq(i-1).fadeIn(300).siblings().fadeOut(300);
+              $("#showPic .btn li").eq(i).addClass("col").siblings().removeClass("col");
+         }      
+    })
+    $("#showPic .btnall .btnall_2").click(function(){
+         i=i+1;
+         if(i>4)i=0;
+         
+         if(i==4){            
+                $("#showPic .one li").eq(0).fadeIn(300).siblings().fadeOut(300);
+                $("#showPic .btn li").eq(4).addClass("col").siblings().removeClass("col");
+         }else{
+              $("#showPic .one li").eq(i).fadeIn(300).siblings().fadeOut(300);
+              $("#showPic .btn li").eq(i).addClass("col").siblings().removeClass("col");
+         }       
+    })  
+   }
+   b();
+   function showList(){
+        var oMain=$("#showPic .left_nav ul li");
+          
+          // oMain.mouseover(function(){
+          //    var oDd=$(this).find("dd");
+          //    var length=oDd.length;
+          //    var x=oDd.width();
+          //    var y=oDd.height();
+             
+          //      // for(var i=0;i<length;i++){
+          //      //    oDd.eq(i).css({
+          //      //      'top':'i*y'+'px','left':'Math.ceil(length/6)*x'+'px';
+          //      //    })
+          //      // }            
+          // })
+   }
+   showList();
+   
+
+   
+  var oMa=document.getElementById("main"); 
+   function startMove(){
+       var timer=null;
+       clearInterval(timer)
+       timer=setInterval(function(){
+                      
+              oMa.style.left=oMa.offsetLeft+10+"px";
+              if(oMa.offsetLeft>0){
+                   clearInterval(timer) 
+              }
+       },4)
+   }
+   function startMove1(){
+       var timer=null;
+       clearInterval(timer)
+       timer=setInterval(function(){
+           var oMa=document.getElementById("main");           
+              oMa.style.left=oMa.offsetLeft-10+"px";
+              if(oMa.offsetLeft<-1300){
+                   clearInterval(timer) 
+              }
+       },4)
+   }
+   
+   
+ </script>
+</body>
+</html>
